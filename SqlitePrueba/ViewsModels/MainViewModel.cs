@@ -21,7 +21,9 @@ namespace SqlitePrueba.ViewsModels
         #endregion
 
 
+        #region
 
+        #endregion
         #region Constructores
         public MainViewModel()
         {
