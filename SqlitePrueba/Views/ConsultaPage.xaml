@@ -10,8 +10,8 @@
         <StackLayout
             BindingContext="{Binding Consulta}">
             <ListView 
-                        SeparatorVisibility="None"
-                       ItemsSource="{Binding UsersColleciton}">
+                SeparatorVisibility="None"
+                ItemsSource="{Binding UsersColleciton}">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
@@ -23,20 +23,10 @@
                                     Grid.Column="1"
                                     Text="{Binding LastName}"
                                     FontSize="Medium"/>
-                                 
-
-
                             </Grid>
                         </ViewCell>
-
                     </DataTemplate>
-
                 </ListView.ItemTemplate>
-                  
-                
-                
-                
-                
             </ListView>
         </StackLayout>
     </ContentPage.Content>

@@ -12,13 +12,21 @@
             
             Padding="20"
             BindingContext="{Binding Registro}">
-            
-            <StackLayout Orientation="Horizontal">
+            <Label  
+                   Text="¡Bienvenido!"  
+                   TextColor="Black"
+                   FontSize="30"
+                   HorizontalTextAlignment="Center">
                 
-                <Label 
-                    
+            </Label>
+            <Image Source="User.png" HeightRequest="100" >
+                
+            </Image>
+            <StackLayout Orientation="Horizontal" >
+                
+                <Label                   
                     Text="Nombre:"
-                    FontSize="24" 
+                    FontSize="20" 
                     
                     TextColor="Black"
                     VerticalOptions="Center"
@@ -35,7 +43,7 @@
             <StackLayout Orientation="Horizontal" Padding="0,20,0,0">
                 <Label 
                     Text="Apellido:" 
-                    FontSize="24" 
+                    FontSize="20" 
                     TextColor="Black"
                     HorizontalOptions="Start"
                     VerticalOptions="Center"
@@ -53,20 +61,21 @@
             <Button
                 Margin="50,30,50,0"
                 VerticalOptions="Center"
-                HeightRequest="60" 
-                BorderRadius="30"
+                HeightRequest="40" 
+                BorderRadius="20"
                 Text="Registrar"
-                FontSize="20" 
+                FontSize="15" 
                Command="{Binding RegisterCommand}"  
                 BackgroundColor="#AAA6D5">
             </Button>
             <Button
                 Margin="50,30,50,0"
                 VerticalOptions="Center"
-                HeightRequest="60" 
-                BorderRadius="30"
+                HeightRequest="40" 
+                BorderRadius="20"
                 Text="Mostrar"
-                FontSize="20"
+                FontSize="15"
+                
                 Command="{Binding ConsultarCommand}"
                 BackgroundColor="#AAA6D5"
             >

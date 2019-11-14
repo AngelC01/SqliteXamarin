@@ -11,7 +11,7 @@ using SqlitePrueba.Models;
 
 namespace SqlitePrueba.ViewsModels
 {
-    public class RegistroViewModel:BaseViewModel
+    public class RegistroViewModel : BaseViewModel
     {
         private String name;
         private String lastname;
@@ -28,7 +28,7 @@ namespace SqlitePrueba.ViewsModels
             set { SetValue(ref this.lastname, value); }
         }
 
-        
+
 
         public ICommand RegisterCommand
         {
@@ -45,20 +45,48 @@ namespace SqlitePrueba.ViewsModels
             }
         }
 
-        private void Register()
+        private async void Register()
         {
+            if (string.IsNullOrEmpty(this.Name))
+            {
+                await Application.Current.MainPage.DisplayAlert(
+                   "Error",
+                   "Debe ingresar  nombre",
+                   "Aceptar");
+                return;
+            }
+            if (string.IsNullOrEmpty(this.LastName))
+            {
+                await Application.Current.MainPage.DisplayAlert(
+                   "Error",
+                   "Debe ingresar apelldio",
+                   "Aceptar");
+                return;
+            }
+
+
+            
             UserRepository.Instancia.AddNewUser(this.Name, this.LastName);
+            BlanquearTxt();
         }
 
         private async void Consultar()
         {
-
-            MainViewModel.GetInstance().Consulta= new ConsultaViewModel();
             
+
+            BlanquearTxt();
+           
+            MainViewModel.GetInstance().Consulta = new ConsultaViewModel();
             await Application.Current.MainPage.Navigation.PushAsync(new ConsultaPage());
         }
 
+        
 
+        private void BlanquearTxt()
+        {
+            this.Name = string.Empty;
+            this.LastName = string.Empty;
+        }
     }
 
 }

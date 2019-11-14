@@ -470,3 +470,5 @@ C:\Users\Next2\source\repos\SqlitePrueba\SqlitePrueba.Android\obj\Debug\90\andro
 C:\Users\Next2\source\repos\SqlitePrueba\SqlitePrueba.Android\obj\Debug\90\android\src\md58d25d7d36a89bfc21ba32bca6da1d4fb\ActivityBase.java
 C:\Users\Next2\source\repos\SqlitePrueba\SqlitePrueba.Android\obj\Debug\90\android\src\md58d25d7d36a89bfc21ba32bca6da1d4fb\DialogService_OnDismissListener.java
 C:\Users\Next2\source\repos\SqlitePrueba\SqlitePrueba.Android\obj\Debug\90\android\src\md5ad9960755165493a8cff3a2705b796a2\ObservableAdapter_1.java
+C:\Users\Next2\source\repos\SqlitePrueba\SqlitePrueba.Android\obj\Debug\90\res\drawable\user.png
+C:\Users\Next2\source\repos\SqlitePrueba\SqlitePrueba.Android\obj\Debug\90\stamp\SetupDependenciesForDesigner.stamp

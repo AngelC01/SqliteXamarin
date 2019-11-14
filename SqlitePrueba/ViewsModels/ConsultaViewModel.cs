@@ -25,7 +25,7 @@ namespace SqlitePrueba.ViewsModels
             public ConsultaViewModel()
             {
 
-                 LoadUsers();
+                LoadUsers();
             
             }
 

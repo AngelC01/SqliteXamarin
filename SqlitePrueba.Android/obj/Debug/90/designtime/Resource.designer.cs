@@ -5791,6 +5791,9 @@ namespace SqlitePrueba.Droid
 			// aapt resource value: 0x7F07006F
 			public const int tooltip_frame_light = 2131165295;
 			
+			// aapt resource value: 0x7F070070
+			public const int User = 2131165296;
+			
 			static Drawable()
 			{
 				global::Android.Runtime.ResourceIdManager.UpdateIdValues();
