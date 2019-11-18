@@ -8,6 +8,7 @@ using SqlitePrueba.Views;
 using System.Windows.Input;
 using GalaSoft.MvvmLight.Command;
 using SqlitePrueba.Models;
+using System.IO;
 
 namespace SqlitePrueba.ViewsModels
 {
@@ -15,6 +16,20 @@ namespace SqlitePrueba.ViewsModels
     {
         private String name;
         private String lastname;
+        private String estadoMensaje;
+        private Image imageProfile;
+
+        public Image ImageProfile
+        {
+            get { return this.imageProfile; }
+            set { SetValue(ref this.imageProfile, value); }
+        }
+
+        public String EstadoMensaje
+        {
+            get { return this.estadoMensaje; }
+            set { SetValue(ref this.estadoMensaje, value); }
+        }
 
         public String Name
         {
@@ -45,6 +60,25 @@ namespace SqlitePrueba.ViewsModels
             }
         }
 
+
+        public ICommand SelectImageCommand
+        {
+            get
+            {
+                return new RelayCommand(SelectImage);
+            }
+        }
+
+        private async void SelectImage()
+        {
+            Stream stream = await DependencyService.Get<IPhotoPickerService>().GetImageStreamAsync();
+            if (stream != null)
+            {
+               ImageProfile.Source = ImageSource.FromStream(() => stream);
+            }
+
+        }
+
         private async void Register()
         {
             if (string.IsNullOrEmpty(this.Name))
@@ -66,7 +100,8 @@ namespace SqlitePrueba.ViewsModels
 
 
             
-            UserRepository.Instancia.AddNewUser(this.Name, this.LastName);
+            UserRepository.Instancia.AddNewUser(this.Name, this.LastName,this.ImageProfile) ;
+            this.EstadoMensaje = UserRepository.Instancia.EstadoMensaje;
             BlanquearTxt();
         }
 
@@ -87,6 +122,10 @@ namespace SqlitePrueba.ViewsModels
             this.Name = string.Empty;
             this.LastName = string.Empty;
         }
-    }
 
+       
+
+
+    }
+    
 }

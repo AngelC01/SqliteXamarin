@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using Xamarin.Forms;
 
 namespace SqlitePrueba.Models
 {
@@ -39,7 +40,7 @@ namespace SqlitePrueba.Models
         }
 
         public String EstadoMensaje;
-        public int AddNewUser(string name, string lastname)
+        public int AddNewUser(string name, string lastname, Image ImageProfile)
         {
             int result = 0;
             try
@@ -79,7 +80,7 @@ namespace SqlitePrueba.Models
             try
             {
                 
-                 con.Query<User>("Delete From User");
+                 con.Query<User>("DROP TABLE User");
                 
                 EstadoMensaje = string.Format("Cantidad de filas afectadas: {0}", result);
             }

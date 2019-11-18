@@ -11,6 +11,7 @@
         "dependencies": {
           "MvvmLightLibs": "5.4.1.1",
           "NETStandard.Library": "2.0.3",
+          "System.Drawing.Common": "4.6.0",
           "Xamarin.Essentials": "1.2.0",
           "Xamarin.Forms": "4.3.0.778476-pre1",
           "sqlite-net-pcl": "1.6.292"
@@ -81,6 +82,14 @@
           "lib/netstandard1.1/SQLitePCLRaw.core.dll": {
             "assemblyVersion": "1.1.13.388",
             "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "System.Drawing.Common/4.6.0": {
+        "runtime": {
+          "lib/netstandard2.0/System.Drawing.Common.dll": {
+            "assemblyVersion": "4.0.0.1",
+            "fileVersion": "4.6.26919.2"
           }
         }
       },
@@ -168,6 +177,13 @@
       "sha512": "sha512-I8Q9qL1urPegoyZ5uI32lgqsxl8aPRZAyVBJbO+0T/zlGz/LBc8vhRVyDyCOU9LWWpV8dYpT0nCpuLv1ua6zkA==",
       "path": "sqlitepclraw.core/1.1.13",
       "hashPath": "sqlitepclraw.core.1.1.13.nupkg.sha512"
+    },
+    "System.Drawing.Common/4.6.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-2A3spjjoPZnvpVh/sDTzd+0H8ZqTdr+hH/6obB8MMfG81EJ85PmxCKDBxhBVQiA25PliKAZ1sKogDcq9mSnFEA==",
+      "path": "system.drawing.common/4.6.0",
+      "hashPath": "system.drawing.common.4.6.0.nupkg.sha512"
     },
     "System.Numerics.Vectors/4.5.0": {
       "type": "package",

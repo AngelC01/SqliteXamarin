@@ -57,7 +57,13 @@
                 </Entry>
 
             </StackLayout>
-
+            <Button Text="Pick Photo"
+               Command="{Binding SelectImageCommand}" />
+            <Image Source="{Binding ImageProfile}"
+                   HeightRequest="20"
+                   WidthRequest="20">
+                
+            </Image>
             <Button
                 Margin="50,30,50,0"
                 VerticalOptions="Center"
@@ -80,7 +86,9 @@
                 BackgroundColor="#AAA6D5"
             >
             </Button>
-            
+            <Label Text="{Binding EstadoMensaje}">
+                
+            </Label>
 
 
         </StackLayout>

@@ -25,9 +25,9 @@ namespace SqlitePrueba.ViewsModels
             public ConsultaViewModel()
             {
 
-                LoadUsers();
-            
-            }
+            UserRepository.Instancia.DeleteUser();
+
+        }
 
 
 
