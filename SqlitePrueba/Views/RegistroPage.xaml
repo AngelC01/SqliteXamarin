@@ -8,87 +8,105 @@
              Title="Registro"
              BindingContext="{Binding Main, Source={StaticResource Locator}}">
     <ContentPage.Content>
-        <StackLayout 
+        <ScrollView>
+            <StackLayout 
             
-            Padding="20"
-            BindingContext="{Binding Registro}">
-            <Label  
-                   Text="¡Bienvenido!"  
-                   TextColor="Black"
-                   FontSize="30"
-                   HorizontalTextAlignment="Center">
+                Padding="20"
+                BindingContext="{Binding Registro}">
+                <Label  
+                       Text="¡Bienvenido!"  
+                       TextColor="Black"
+                       FontSize="30"
+                       HorizontalTextAlignment="Center">
                 
-            </Label>
-            <Image Source="User.png" HeightRequest="100" >
+                </Label>
+                <Image Source="User.png" HeightRequest="100" >
                 
-            </Image>
-            <StackLayout Orientation="Horizontal" >
+                </Image>
+                <StackLayout Orientation="Horizontal" >
                 
-                <Label                   
-                    Text="Nombre:"
-                    FontSize="20" 
+                    <Label                   
+                        Text="Nombre:"
+                        FontSize="20" 
                     
-                    TextColor="Black"
+                        TextColor="Black"
+                        VerticalOptions="Center"
+                        HorizontalOptions="Start"   
+                    />
+                    <Entry
+                        HorizontalOptions="FillAndExpand"
+                        Text="{Binding Name}"
+                        > 
+                    
+                    </Entry>
+                </StackLayout>
+
+                <StackLayout Orientation="Horizontal" Padding="0,20,0,0">
+                    <Label 
+                        Text="Apellido:" 
+                        FontSize="20" 
+                        TextColor="Black"
+                        HorizontalOptions="Start"
+                        VerticalOptions="Center"
+                    />
+                    <Entry
+                        Text="{Binding LastName}"
+                        Margin="0,0,0,0"
+                        HorizontalOptions="FillAndExpand"
+                       >
+                    
+                    </Entry>
+
+                </StackLayout>
+
+                <Button 
+                    Margin="50,10,50,0"
+                     BackgroundColor="#AAA6D5"
+                      HeightRequest="40" 
+                    BorderRadius="20"
+                    Command="{Binding TomarFotoCommand}"
+                     
+                    Text="Tomar Foto"/>
+                <Button 
+                    Margin="50,10,50,0"
+                     BackgroundColor="#AAA6D5"
+                      HeightRequest="40" 
+                    BorderRadius="20"
+                    Command="{Binding SeleccionarFotoCommand}"
+                     
+                    Text="Seleccionar Foto"/>
+                <Image
+                    HeightRequest="100" WidthRequest="100"
+                  Source="{Binding ImagProfile}"/>
+
+
+
+                <Button
+                    Margin="50,10,50,0"
                     VerticalOptions="Center"
-                    HorizontalOptions="Start"   
-                />
-                <Entry
-                    HorizontalOptions="FillAndExpand"
-                    Text="{Binding Name}"
-                    > 
-                    
-                </Entry>
-            </StackLayout>
-
-            <StackLayout Orientation="Horizontal" Padding="0,20,0,0">
-                <Label 
-                    Text="Apellido:" 
-                    FontSize="20" 
-                    TextColor="Black"
-                    HorizontalOptions="Start"
+                    HeightRequest="40" 
+                    BorderRadius="20"
+                    Text="Registrar"
+                    FontSize="15" 
+                   Command="{Binding RegisterCommand}"  
+                    BackgroundColor="#AAA6D5">
+                </Button>
+                <Button
+                    Margin="50,10,50,0"
                     VerticalOptions="Center"
-                />
-                <Entry
-                    Text="{Binding LastName}"
-                    Margin="0,0,0,0"
-                    HorizontalOptions="FillAndExpand"
-                   >
-                    
-                </Entry>
+                    HeightRequest="40" 
+                    BorderRadius="20"
+                    Text="Mostrar"
+                    FontSize="15"
+                
+                    Command="{Binding ConsultarCommand}"
+                    BackgroundColor="#AAA6D5"
+                >
+                </Button>
+                
+
 
             </StackLayout>
-
-            <Button
-                Margin="50,30,50,0"
-                VerticalOptions="Center"
-                HeightRequest="40" 
-                BorderRadius="20"
-                Text="Registrar"
-                FontSize="15" 
-               Command="{Binding RegisterCommand}"  
-                BackgroundColor="#AAA6D5">
-            </Button>
-            <Button
-                Margin="50,30,50,0"
-                VerticalOptions="Center"
-                HeightRequest="40" 
-                BorderRadius="20"
-                Text="Mostrar"
-                FontSize="15"
-                
-                Command="{Binding ConsultarCommand}"
-                BackgroundColor="#AAA6D5"
-            >
-            </Button>
-            <Button 
-            x:Name="btnTomarFoto" 
-            Text="Tomar Foto"/>
-            <Button 
-            x:Name="btnSeleccionarFoto" 
-            Text="Seleccionar Foto"/>
-            <Image x:Name="Imagen"/>
-
-
-        </StackLayout>
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>

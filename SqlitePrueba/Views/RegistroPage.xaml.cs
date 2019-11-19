@@ -16,7 +16,7 @@ namespace SqlitePrueba.Views
         public RegistroPage()
         {
             InitializeComponent();
-            btnTomarFoto.Clicked += async (sender, args) =>
+           /* btnTomarFoto.Clicked += async (sender, args) =>
             {
                 await CrossMedia.Current.Initialize();
 
@@ -48,9 +48,9 @@ namespace SqlitePrueba.Views
                     var stream = file.GetStream();
                     return stream;
                 });
-            };
+            }; */
 
-            btnSeleccionarFoto.Clicked += async (sender, args) =>
+          /*  btnSeleccionarFoto.Clicked += async (sender, args) =>
             {
                 if (!CrossMedia.Current.IsPickPhotoSupported)
                 {
@@ -74,7 +74,7 @@ namespace SqlitePrueba.Views
                     return stream;
                 });
 
-            };
+            }; */
         }
 
 

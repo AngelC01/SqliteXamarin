@@ -1687,11 +1687,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Next2\\source\\repos\\SqliteXamarin-master\\SqlitePrueba.iOS\\SqlitePrueba.iOS.csproj",
+      "projectUniqueName": "C:\\Users\\Next2\\source\\repos\\SqlitePrueba\\SqlitePrueba.iOS\\SqlitePrueba.iOS.csproj",
       "projectName": "SqlitePrueba.iOS",
-      "projectPath": "C:\\Users\\Next2\\source\\repos\\SqliteXamarin-master\\SqlitePrueba.iOS\\SqlitePrueba.iOS.csproj",
+      "projectPath": "C:\\Users\\Next2\\source\\repos\\SqlitePrueba\\SqlitePrueba.iOS\\SqlitePrueba.iOS.csproj",
       "packagesPath": "C:\\Users\\Next2\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Next2\\source\\repos\\SqliteXamarin-master\\SqlitePrueba.iOS\\obj\\",
+      "outputPath": "C:\\Users\\Next2\\source\\repos\\SqlitePrueba\\SqlitePrueba.iOS\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "fallbackFolders": [
@@ -1712,8 +1712,8 @@
       "frameworks": {
         "xamarinios10": {
           "projectReferences": {
-            "C:\\Users\\Next2\\source\\repos\\SqliteXamarin-master\\SqlitePrueba\\SqlitePrueba.csproj": {
-              "projectPath": "C:\\Users\\Next2\\source\\repos\\SqliteXamarin-master\\SqlitePrueba\\SqlitePrueba.csproj"
+            "C:\\Users\\Next2\\source\\repos\\SqlitePrueba\\SqlitePrueba\\SqlitePrueba.csproj": {
+              "projectPath": "C:\\Users\\Next2\\source\\repos\\SqlitePrueba\\SqlitePrueba\\SqlitePrueba.csproj"
             }
           }
         }

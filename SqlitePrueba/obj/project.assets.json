@@ -898,11 +898,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Next2\\source\\repos\\SqliteXamarin-master\\SqlitePrueba\\SqlitePrueba.csproj",
+      "projectUniqueName": "C:\\Users\\Next2\\source\\repos\\SqlitePrueba\\SqlitePrueba\\SqlitePrueba.csproj",
       "projectName": "SqlitePrueba",
-      "projectPath": "C:\\Users\\Next2\\source\\repos\\SqliteXamarin-master\\SqlitePrueba\\SqlitePrueba.csproj",
+      "projectPath": "C:\\Users\\Next2\\source\\repos\\SqlitePrueba\\SqlitePrueba\\SqlitePrueba.csproj",
       "packagesPath": "C:\\Users\\Next2\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Next2\\source\\repos\\SqliteXamarin-master\\SqlitePrueba\\obj\\",
+      "outputPath": "C:\\Users\\Next2\\source\\repos\\SqlitePrueba\\SqlitePrueba\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\"

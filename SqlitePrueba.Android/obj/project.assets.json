@@ -2362,11 +2362,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Next2\\source\\repos\\SqliteXamarin-master\\SqlitePrueba.Android\\SqlitePrueba.Android.csproj",
+      "projectUniqueName": "C:\\Users\\Next2\\source\\repos\\SqlitePrueba\\SqlitePrueba.Android\\SqlitePrueba.Android.csproj",
       "projectName": "SqlitePrueba.Android",
-      "projectPath": "C:\\Users\\Next2\\source\\repos\\SqliteXamarin-master\\SqlitePrueba.Android\\SqlitePrueba.Android.csproj",
+      "projectPath": "C:\\Users\\Next2\\source\\repos\\SqlitePrueba\\SqlitePrueba.Android\\SqlitePrueba.Android.csproj",
       "packagesPath": "C:\\Users\\Next2\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Next2\\source\\repos\\SqliteXamarin-master\\SqlitePrueba.Android\\obj\\",
+      "outputPath": "C:\\Users\\Next2\\source\\repos\\SqlitePrueba\\SqlitePrueba.Android\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "fallbackFolders": [
@@ -2387,8 +2387,8 @@
       "frameworks": {
         "monoandroid90": {
           "projectReferences": {
-            "C:\\Users\\Next2\\source\\repos\\SqliteXamarin-master\\SqlitePrueba\\SqlitePrueba.csproj": {
-              "projectPath": "C:\\Users\\Next2\\source\\repos\\SqliteXamarin-master\\SqlitePrueba\\SqlitePrueba.csproj"
+            "C:\\Users\\Next2\\source\\repos\\SqlitePrueba\\SqlitePrueba\\SqlitePrueba.csproj": {
+              "projectPath": "C:\\Users\\Next2\\source\\repos\\SqlitePrueba\\SqlitePrueba\\SqlitePrueba.csproj"
             }
           }
         }
