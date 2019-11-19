@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="SqlitePrueba.Views.RegistroPage"
+             Title="Registro"
+             BindingContext="{Binding Main, Source={StaticResource Locator}}">
+    <ContentPage.Content>
+        <StackLayout 
+            
+            Padding="20"
+            BindingContext="{Binding Registro}">
+            <Label  
+                   Text="¡Bienvenido!"  
+                   TextColor="Black"
+                   FontSize="30"
+                   HorizontalTextAlignment="Center">
+                
+            </Label>
+            <Image Source="User.png" HeightRequest="100" >
+                
+            </Image>
+            <StackLayout Orientation="Horizontal" >
+                
+                <Label                   
+                    Text="Nombre:"
+                    FontSize="20" 
+                    
+                    TextColor="Black"
+                    VerticalOptions="Center"
+                    HorizontalOptions="Start"   
+                />
+                <Entry
+                    HorizontalOptions="FillAndExpand"
+                    Text="{Binding Name}"
+                    > 
+                    
+                </Entry>
+            </StackLayout>
+
+            <StackLayout Orientation="Horizontal" Padding="0,20,0,0">
+                <Label 
+                    Text="Apellido:" 
+                    FontSize="20" 
+                    TextColor="Black"
+                    HorizontalOptions="Start"
+                    VerticalOptions="Center"
+                />
+                <Entry
+                    Text="{Binding LastName}"
+                    Margin="0,0,0,0"
+                    HorizontalOptions="FillAndExpand"
+                   >
+                    
+                </Entry>
+
+            </StackLayout>
+
+            <Button
+                Margin="50,30,50,0"
+                VerticalOptions="Center"
+                HeightRequest="40" 
+                BorderRadius="20"
+                Text="Registrar"
+                FontSize="15" 
+               Command="{Binding RegisterCommand}"  
+                BackgroundColor="#AAA6D5">
+            </Button>
+            <Button
+                Margin="50,30,50,0"
+                VerticalOptions="Center"
+                HeightRequest="40" 
+                BorderRadius="20"
+                Text="Mostrar"
+                FontSize="15"
+                
+                Command="{Binding ConsultarCommand}"
+                BackgroundColor="#AAA6D5"
+            >
+            </Button>
+            <Button 
+            x:Name="btnTomarFoto" 
+            Text="Tomar Foto"/>
+            <Button 
+            x:Name="btnSeleccionarFoto" 
+            Text="Seleccionar Foto"/>
+            <Image x:Name="Imagen"/>
+
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
