@@ -39,15 +39,16 @@ namespace SqlitePrueba.Models
         }
 
         public String EstadoMensaje;
-        public int AddNewUser(string name, string lastname)
+        public int AddNewUser(string name, string lastname, byte[] imageProfile)
         {
             int result = 0;
             try
             {
                 result = con.Insert(new User() { 
                                                Name=name,
-                                                LastName=lastname,                     
-                });
+                                                LastName=lastname,  
+                                                ImageProfile=imageProfile,
+                });                         
                 EstadoMensaje = string.Format("Cantidad de filas afectadas: {0}", result);
             }
             catch (Exception e)

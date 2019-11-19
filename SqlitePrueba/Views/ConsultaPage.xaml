@@ -11,18 +11,26 @@
             BindingContext="{Binding Consulta}">
             <ListView 
                 SeparatorVisibility="None"
-                ItemsSource="{Binding UsersColleciton}">
+                ItemsSource="{Binding Users2Colleciton}">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
                             <Grid>
-                                <Label Text="{Binding Name}"
-                                       Grid.Column="0"
-                                       FontSize="Medium"/>
+                                <Label 
+                                    Text="{Binding Name}"
+                                    Grid.Column="0"
+                                    FontSize="Medium"/>
                                 <Label
                                     Grid.Column="1"
                                     Text="{Binding LastName}"
                                     FontSize="Medium"/>
+                                <Image
+                                    Source="{Binding ImgProfile}"
+                                    Grid.Column="3"
+                                    WidthRequest="30"
+                                    HeightRequest="30">
+                                   
+                                </Image>
                             </Grid>
                         </ViewCell>
                     </DataTemplate>

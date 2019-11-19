@@ -9,15 +9,36 @@ using System.Windows.Input;
 using GalaSoft.MvvmLight.Command;
 using SqlitePrueba.Models;
 using Plugin.Media;
+using System.IO;
 
 namespace SqlitePrueba.ViewsModels
 {
     public class RegistroViewModel : BaseViewModel
     {
+        #region Atributos
+        private Stream input;
         private String name;
         private String lastname;
         private ImageSource imagProfile;  //Binding con el source de la imagen como la etiqueta imagen tiene source es este source
-        //que debo crear en las propiedades
+        private byte[] imagProfiledb;
+
+        #endregion                                  
+
+
+        #region Propiedades
+
+        public Stream Input
+        {
+            get { return this.input; }
+            set { SetValue(ref this.input, value); }
+        }
+
+        public byte[] ImagProfiledb
+        {
+            get { return this.imagProfiledb; }
+            set { SetValue(ref this.imagProfiledb, value); }
+        }
+
         public ImageSource ImagProfile
         {
             get { return this.imagProfile; }
@@ -34,7 +55,12 @@ namespace SqlitePrueba.ViewsModels
         {
             get { return this.lastname; }
             set { SetValue(ref this.lastname, value); }
-        }
+        } 
+        #endregion
+
+
+
+        #region Comandos
 
         public ICommand SeleccionarFotoCommand
         {
@@ -44,42 +70,65 @@ namespace SqlitePrueba.ViewsModels
             }
 
         }
-
-        private async void SeleccionarFoto()
-        {
-            if (!CrossMedia.Current.IsPickPhotoSupported)
-            {
-                await Application.Current.MainPage.DisplayAlert("Photos Not Supported", ":( Permission not granted to photos.", "OK");
-                return;
-            }
-            var file = await Plugin.Media.CrossMedia.Current.PickPhotoAsync(new Plugin.Media.Abstractions.PickMediaOptions
-            {
-                PhotoSize = Plugin.Media.Abstractions.PhotoSize.Medium,
-
-            });
-
-
-            if (file == null)
-            {
-                return;
-            }
-                
-
-            ImagProfile = ImageSource.FromStream(() =>
-            {
-                var stream = file.GetStream();
-                file.Dispose();
-                return stream;
-            });
-        }
-
-
         public ICommand TomarFotoCommand
         {
             get
             {
                 return new RelayCommand(TomarFoto);    
             }
+        }
+        public ICommand RegisterCommand
+        {
+            get
+            {
+                return new RelayCommand(Register);
+            }
+        }
+        public ICommand ConsultarCommand
+        {
+            get
+            {
+                return new RelayCommand(Consultar);
+            }
+        }
+
+        #endregion
+
+
+        #region Metodos
+        private async void Register()
+        {
+            if (string.IsNullOrEmpty(this.Name))
+            {
+                await Application.Current.MainPage.DisplayAlert(
+                   "Error",
+                   "Debe ingresar  nombre",
+                   "Aceptar");
+                return;
+            }
+            if (string.IsNullOrEmpty(this.LastName))
+            {
+                await Application.Current.MainPage.DisplayAlert(
+                   "Error",
+                   "Debe ingresar apelldio",
+                   "Aceptar");
+                return;
+            }
+
+
+            
+            UserRepository.Instancia.AddNewUser(this.Name, this.LastName, this.ImagProfiledb);
+            BlanquearTxt();
+        }
+
+        private async void Consultar()
+        {
+            
+
+            BlanquearTxt();
+           
+            MainViewModel.GetInstance().Consulta = new ConsultaViewModel();
+            await Application.Current.MainPage.Navigation.PushAsync(new ConsultaPage());
         }
 
         private async void TomarFoto()
@@ -116,63 +165,61 @@ namespace SqlitePrueba.ViewsModels
             });
         }
 
-        public ICommand RegisterCommand
+        private async void SeleccionarFoto()
         {
-            get
+            if (!CrossMedia.Current.IsPickPhotoSupported)
             {
-                return new RelayCommand(Register);
-            }
-        }
-        public ICommand ConsultarCommand
-        {
-            get
-            {
-                return new RelayCommand(Consultar);
-            }
-        }
-
-        private async void Register()
-        {
-            if (string.IsNullOrEmpty(this.Name))
-            {
-                await Application.Current.MainPage.DisplayAlert(
-                   "Error",
-                   "Debe ingresar  nombre",
-                   "Aceptar");
+                await Application.Current.MainPage.DisplayAlert("Photos Not Supported", 
+                    ":( Permission not granted to photos.",
+                    "OK");
                 return;
             }
-            if (string.IsNullOrEmpty(this.LastName))
+            var file = await Plugin.Media.CrossMedia.Current.PickPhotoAsync(new Plugin.Media.Abstractions.PickMediaOptions
             {
-                await Application.Current.MainPage.DisplayAlert(
-                   "Error",
-                   "Debe ingresar apelldio",
-                   "Aceptar");
+                PhotoSize = Plugin.Media.Abstractions.PhotoSize.Medium,
+
+            });
+
+
+            if (file == null)
+            {
                 return;
             }
 
 
+            ImagProfile = ImageSource.FromStream(() =>
+            {
+                this.Input = file.GetStream();
+               this.imagProfiledb= GetImageBytes(file.GetStream());
+                file.Dispose();
+                
+                return Input;
+
+            });
             
-            UserRepository.Instancia.AddNewUser(this.Name, this.LastName);
-            BlanquearTxt();
-        }
-
-        private async void Consultar()
-        {
             
-
-            BlanquearTxt();
-           
-            MainViewModel.GetInstance().Consulta = new ConsultaViewModel();
-            await Application.Current.MainPage.Navigation.PushAsync(new ConsultaPage());
         }
-
-        
-
         private void BlanquearTxt()
         {
             this.Name = string.Empty;
             this.LastName = string.Empty;
         }
+
+
+
+
+        private byte[] GetImageBytes(Stream stream)
+        {
+            byte[] ImageBytes;
+            using (var memoryStream = new System.IO.MemoryStream())
+            {
+                stream.CopyTo(memoryStream);
+                ImageBytes = memoryStream.ToArray();
+            }
+            return ImageBytes;
+        }
+
+        #endregion
     }
 
 }

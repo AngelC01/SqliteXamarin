@@ -23,7 +23,7 @@ namespace SqlitePrueba.Droid
 
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
-            String dbPath = FileAccess.GetLocalFilePath("users2.db3");
+            String dbPath = FileAccess.GetLocalFilePath("users4.db3");
             LoadApplication(new App(dbPath));
         }
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)
