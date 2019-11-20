@@ -10,6 +10,7 @@
         <StackLayout
             BindingContext="{Binding Consulta}">
             <ListView 
+                HasUnevenRows="True"
                 SeparatorVisibility="None"
                 ItemsSource="{Binding Users2Colleciton}">
                 <ListView.ItemTemplate>
@@ -24,13 +25,16 @@
                                     Grid.Column="1"
                                     Text="{Binding LastName}"
                                     FontSize="Medium"/>
+
                                 <Image
                                     Source="{Binding ImgProfile}"
-                                    Grid.Column="3"
-                                    WidthRequest="30"
-                                    HeightRequest="30">
-                                   
+                                    Grid.Column="2"
+                                    >
                                 </Image>
+                                <Label
+                                    Grid.Column="3"
+                                    Text="{Binding Id}"
+                                    FontSize="Medium"/>
                             </Grid>
                         </ViewCell>
                     </DataTemplate>

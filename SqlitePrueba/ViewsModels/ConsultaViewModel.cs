@@ -49,10 +49,19 @@ namespace SqlitePrueba.ViewsModels
                 userItem.Name = this.UsersColleciton[i].Name;
                 userItem.LastName = this.UsersColleciton[i].LastName;
                 userItem.Id = this.UsersColleciton[i].Id;
-                userItem.ImgProfile = ImageSource.FromStream(() => new MemoryStream(this.UsersColleciton[i].ImageProfile));
+                
+                var stream1 = new MemoryStream(this.UsersColleciton[i].ImageProfile);
+                
+                userItem.ImgProfile= ImageSource.FromStream(() => stream1);
+
+                Console.WriteLine("Hola XDD");
+               
+
+                Console.WriteLine("Hola mundo");
                 this.Users2Colleciton.Add(userItem); 
 
             }
+
 
 
         }

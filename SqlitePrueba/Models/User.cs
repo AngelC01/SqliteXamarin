@@ -15,7 +15,7 @@ namespace SqlitePrueba.Models
         public String Name { get; set; }
         [MaxLength(70)]
         public String LastName { get; set; }
-
+        
         public byte[] ImageProfile { get; set; }
 
     }

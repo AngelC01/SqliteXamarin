@@ -157,7 +157,7 @@ namespace SqlitePrueba.ViewsModels
                 return;
 
             await Application.Current.MainPage.DisplayAlert("File Location", file.Path, "OK");
-
+            this.ImagProfiledb = GetImageBytes(file.GetStream());
             ImagProfile = ImageSource.FromStream(() =>
             {
                 var stream = file.GetStream();
@@ -185,19 +185,23 @@ namespace SqlitePrueba.ViewsModels
             {
                 return;
             }
-
-
+            
+            this.ImagProfiledb = GetImageBytes(file.GetStream());
+            Console.WriteLine(file.ToString());
             ImagProfile = ImageSource.FromStream(() =>
             {
                 this.Input = file.GetStream();
-               this.imagProfiledb= GetImageBytes(file.GetStream());
+             
                 file.Dispose();
                 
                 return Input;
 
             });
-            
-            
+
+            Console.WriteLine("XDDD" + "");
+
+
+
         }
         private void BlanquearTxt()
         {
@@ -208,7 +212,7 @@ namespace SqlitePrueba.ViewsModels
 
 
 
-        private byte[] GetImageBytes(Stream stream)
+        private byte[] GetImageBytes(System.IO.Stream stream)
         {
             byte[] ImageBytes;
             using (var memoryStream = new System.IO.MemoryStream())
